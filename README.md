@@ -25,24 +25,29 @@ Bu konsol uygulaması, API endpoint'lerinizi kolayca test etmenizi sağlar. GET 
 
 ## 🛠️ Kurulum ve Çalıştırma
 
-### 1. Projeyi İndirin
+### Hızlı Başlangıç
 ```bash
-git clone <repository-url>
-cd ApiTester
+# Projeyi indirin
+git clone https://github.com/wexbie/api-tester.git
+cd api-tester
+
+# Uygulamayı çalıştırın
+dotnet run
 ```
 
-### 2. Bağımlılıkları Yükleyin
+### Detaylı Kurulum
 ```bash
+# 1. Projeyi indirin
+git clone https://github.com/wexbie/api-tester.git
+cd api-tester
+
+# 2. Bağımlılıkları yükleyin
 dotnet restore
-```
 
-### 3. Projeyi Derleyin
-```bash
+# 3. Projeyi derleyin
 dotnet build
-```
 
-### 4. Uygulamayı Çalıştırın
-```bash
+# 4. Uygulamayı çalıştırın
 dotnet run
 ```
 
@@ -170,10 +175,11 @@ Program aşağıdaki hata durumlarını güvenli şekilde yönetir:
 
 ### Proje Yapısı
 ```
-ApiTester/
+api-tester/
 ├── Program.cs          # Ana program dosyası
 ├── ApiTester.csproj    # Proje dosyası
-└── README.md          # Bu dosya
+├── README.md          # Bu dosya
+└── LICENSE            # MIT lisans dosyası
 ```
 
 ---
