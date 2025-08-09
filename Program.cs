@@ -7,7 +7,10 @@ namespace ApiTester
 {
     class Program
     {
-        static HttpClient httpClient = new HttpClient();
+        static HttpClient httpClient = new HttpClient()
+        {
+            Timeout = TimeSpan.FromSeconds(30)
+        };
 
         static async Task Main(string[] args)
         {
@@ -63,6 +66,17 @@ namespace ApiTester
                     veri = veri + satir + "\n";
                 }
                 veri = veri.TrimEnd('\n');
+                
+                try
+                {
+                    System.Text.Json.JsonDocument.Parse(veri);
+                }
+                catch (System.Text.Json.JsonException)
+                {
+                    Console.WriteLine("Hata: Geçersiz JSON formatı!");
+                    Console.WriteLine("İpucu: JSON sözdizimini kontrol edin");
+                    return;
+                }
             }
 
             Console.WriteLine("\nAPI isteği gönderiliyor...");
@@ -76,6 +90,12 @@ namespace ApiTester
 
             try
             {
+                if (!Uri.IsWellFormedUriString(webAdresi, UriKind.Absolute))
+                {
+                    Console.WriteLine("Hata: Geçersiz URL formatı! Lütfen tam URL adresini yazın (örn: https://api.example.com/data)");
+                    return;
+                }
+
                 if (yontem == "GET")
                 {
                     var yanit = await httpClient.GetAsync(webAdresi);
@@ -89,12 +109,28 @@ namespace ApiTester
                 }
                 else
                 {
-                    Console.WriteLine("Sadece GET ve POST destekleniyor!");
+                    Console.WriteLine("Hata: Sadece GET ve POST destekleniyor!");
                 }
+            }
+            catch (HttpRequestException hata)
+            {
+                Console.WriteLine($"Ağ Bağlantı Hatası: {hata.Message}");
+                Console.WriteLine("İpucu: İnternet bağlantınızı kontrol edin");
+            }
+            catch (TaskCanceledException hata)
+            {
+                Console.WriteLine($"Timeout Hatası: İstek zaman aşımına uğradı");
+                Console.WriteLine("İpucu: Daha kısa bir süre bekleyip tekrar deneyin");
+            }
+            catch (UriFormatException hata)
+            {
+                Console.WriteLine($"URL Format Hatası: {hata.Message}");
+                Console.WriteLine("İpucu: URL'nin doğru formatta olduğundan emin olun");
             }
             catch (Exception hata)
             {
-                Console.WriteLine($"Bir hata oluştu: {hata.Message}");
+                Console.WriteLine($"Beklenmeyen Hata: {hata.Message}");
+                Console.WriteLine("İpucu: Lütfen tekrar deneyin");
             }
         }
 
