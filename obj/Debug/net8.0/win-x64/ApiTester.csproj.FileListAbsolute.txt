@@ -1,0 +1,15 @@
+C:\Users\wex\Desktop\api-tester\bin\Debug\net8.0\win-x64\ApiTester.exe
+C:\Users\wex\Desktop\api-tester\bin\Debug\net8.0\win-x64\ApiTester.deps.json
+C:\Users\wex\Desktop\api-tester\bin\Debug\net8.0\win-x64\ApiTester.runtimeconfig.json
+C:\Users\wex\Desktop\api-tester\bin\Debug\net8.0\win-x64\ApiTester.dll
+C:\Users\wex\Desktop\api-tester\bin\Debug\net8.0\win-x64\ApiTester.pdb
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\ApiTester.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\ApiTester.AssemblyInfoInputs.cache
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\ApiTester.AssemblyInfo.cs
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\ApiTester.csproj.CoreCompileInputs.cache
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\ApiTester.sourcelink.json
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\ApiTester.dll
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\refint\ApiTester.dll
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\ApiTester.pdb
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\ApiTester.genruntimeconfig.cache
+C:\Users\wex\Desktop\api-tester\obj\Debug\net8.0\win-x64\ref\ApiTester.dll
